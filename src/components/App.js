@@ -2,6 +2,7 @@ import React from 'react';
 import { data } from '../data';
 import Navbar from './Navbar';
 import MoviesCard from './MoviesCard';
+import { addMovies } from '../actions';
 
 class App extends React.Component {
     componentDidMount() {
@@ -13,12 +14,16 @@ class App extends React.Component {
         //make api call
         //dispatch action
         // this.props.store.dispatch({
-        store.dispatch({
-            type: 'ADD_MOVIES',
-            movies: data
-        });
+        store.dispatch(addMovies(data));
 
         console.log('STATE', this.props.store.getState());
+
+        // const unsubscribe =
+        //     store.subscribe(() => {
+        //         store.dispatch({
+        //             type: "",
+        //         });
+        //     });
     }
 
     render() {
