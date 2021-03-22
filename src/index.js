@@ -4,18 +4,12 @@ import { createStore } from 'redux';
 
 import './index.css';
 import App from './components/App';
-import movies from './reducers';
+// import movies from './reducers';
+import rootReducer from './reducers';
 
-const store = createStore(movies);
+// const store = createStore(movies);
+const store = createStore(rootReducer);
 console.log('store', store);
-// console.log('BEFORE STORE', store.getState());
-
-// store.dispatch({
-//   type: 'ADD_MOVIES',
-//   movies: [{ name: 'Superman' }],
-// })
-
-// console.log('AFTER STORE', store.getState());
 
 ReactDOM.render(
   <App store={store} />,
